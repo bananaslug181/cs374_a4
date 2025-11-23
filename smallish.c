@@ -291,6 +291,13 @@ int main()
 					curr_stat = WTERMSIG(childStatus);
 					fflush(stdout);
 				}
+
+				// also update current status if child exits normally
+				else if(WIFEXITED(childStatus)){
+					curr_stat = WTERMSIG(childStatus);
+					printf("terminated by signal %d\n", curr_stat);
+					fflush(stdout);
+				}
 			}
 
 			// only print background id if it IS the background and foreground only mode is not on
