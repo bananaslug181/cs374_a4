@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug Smallish Program",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/smallish",
+            "preLaunchTask": "C/C++: gcc build active file",
+            "args": ["smallish.csv"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb"
+        }
+    ]
+}
