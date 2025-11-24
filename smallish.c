@@ -306,14 +306,17 @@ int main()
 
 			// child is not a foreground process, don't wait for it
 			if(WIFEXITED(childStatus)){
-				//printf("Child %d exited normally with status %d\n", childPid, WEXITSTATUS(childStatus));
-				//curr_stat = WEXITSTATUS(childStatus);
+				//Child %d exited normally
+				curr_stat = WEXITSTATUS(childStatus);
+				fflush(stdout);
 
-			/*
-			} else if (WIFSIGNALED(childStatus)) {
+			} 
+			else if (WIFSIGNALED(childStatus)) {
+				// child did not exit normally
 				printf("background pid %d is done: terminated by signal %d\n", childPid, WTERMSIG(childStatus));
 				curr_stat = WEXITSTATUS(childStatus);
-				*/
+				fflush(stdout);
+
 			}
 		}
 	}
