@@ -234,7 +234,6 @@ int main()
 
 			// input file
 			if (curr_command->input_file != NULL) {
-				printf("In input file\n");
 				// An input file redirected via stdin must be opened for reading only
 				int in_file = open(curr_command->input_file, O_RDONLY); 
 				// if your shell cannot open the file for reading, it must print an error message and set the exit status to 1 (but don't exit the shell).
@@ -253,7 +252,6 @@ int main()
 			if (curr_command->output_file != NULL) {
 
 				// make file to write action output to 
-				printf("In output file\n");
 				// Similarly, an output file redirected via stdout must be opened for writing only 
 				int out_file = open(curr_command->output_file, O_WRONLY | O_CREAT | O_TRUNC, 0644); 
 
@@ -295,7 +293,7 @@ int main()
 				// also update current status if child exits normally
 				else if(WIFEXITED(childStatus)){
 					curr_stat = WTERMSIG(childStatus);
-					printf("terminated by signal %d\n", curr_stat);
+					//printf("terminated by signal %d\n", curr_stat);
 					fflush(stdout);
 				}
 			}
