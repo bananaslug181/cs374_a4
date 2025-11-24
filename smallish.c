@@ -16,6 +16,17 @@
 #include <errno.h>
 //#include <sys/signal.h>
 
+/**
+* Program Name: Smallish
+* Assignment Name: Programming Assignment 4
+* Student Name: Jessica Foley
+* Description: Make a shell
+*
+Date: 11/23/2025
+Based on: https://canvas.oregonstate.edu/courses/2017605/assignments/10180226?return_to=https%3A%2F%2Fcanvas.oregonstate.edu%2Fcalendar%23view_name%3Dmonth%26view_start%3D2025-11-23
+*
+*
+*/
 
 #define INPUT_LENGTH 	 2048
 #define MAX_ARGS		 512
