@@ -113,7 +113,7 @@ int main()
 		int childStatus;
 		while ((done = waitpid(-1, &childStatus, WNOHANG)) > 0) {
 
-			if (WIFEXITED(childStatus)) {
+			if (WIFEXITED(childStatus) && foreground_only_mode == false) {
 				printf("background pid %d is done: exit value %d\n", done, WEXITSTATUS(childStatus));
 			} 
 			else if (WIFSIGNALED(childStatus)) {
@@ -133,6 +133,10 @@ int main()
 		// ignore # (comment)
 		if (curr_command->argv[0][0] == '#') {
 			continue;
+		}
+
+		if (foreground_only_mode == true) {
+			curr_command->is_bg = false;   // get rid of all background-ness if foreground only mode is on
 		}
 
 		pid_t spawnpid, wpid;
