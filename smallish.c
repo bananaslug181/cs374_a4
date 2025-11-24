@@ -166,8 +166,9 @@ int main()
 				perror("cd");
 			}
 			else {
-				// print the new directory
+				// go into the new directory
 				char cwd[2048];
+				chdir(curr_command->argv[1]); // left off this line
 				getcwd(cwd, sizeof(cwd));
 				printf("%s\n", cwd);
 			}
